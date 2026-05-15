@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IoT Predictive Maintenance Testing Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="tag">IoT Automated Testing UI</p>
+      <h1>Predictive Maintenance Validation Dashboard</h1>
+      <p class="subtitle">A simple web interface for the JavaScript IoT testing script. It validates the CSV dataset, checks failure coverage, and presents the results in a reviewer-friendly format.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel controls">
+      <div>
+        <h2>Run the IoT Test</h2>
+        <p>Select the supplied CSV file or click the demo button to analyse the included dataset.</p>
+      </div>
+      <div class="actions">
+        <input id="csvFile" type="file" accept=".csv" />
+        <button id="demoBtn">Run Demo Dataset</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+      <p id="status" class="status">Ready. Choose a CSV file or run the demo dataset.</p>
+    </section>
+
+    <section class="cards" aria-label="summary cards">
+      <article class="card"><span>Records</span><strong id="recordCount">-</strong></article>
+      <article class="card"><span>Failures</span><strong id="failureCount">-</strong></article>
+      <article class="card"><span>Failure Rate</span><strong id="failureRate">-</strong></article>
+      <article class="card"><span>Anomalies</span><strong id="anomalyCount">-</strong></article>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Test Case Results</h2>
+        <table>
+          <thead><tr><th>Test</th><th>Status</th><th>Evidence</th></tr></thead>
+          <tbody id="testRows"><tr><td colspan="3">No test run yet.</td></tr></tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h2>Descriptive Statistics</h2>
+        <table>
+          <tbody id="statsRows"><tr><td>No statistics yet.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Failure Mode Counts</h2>
+        <div id="modeBars" class="bars">No failure mode data yet.</div>
+      </div>
+      <div class="panel">
+        <h2>Detected Anomaly Sample</h2>
+        <div id="anomalyList" class="anomaly-list">No anomaly records yet.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>JavaScript Web UI extension for the IoT thesis practical implementation.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

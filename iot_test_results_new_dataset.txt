@@ -1,0 +1,66 @@
+
+IoT Predictive Maintenance Automated Testing Report
+---------------------------------------------------
+Dataset file: iot_predictive_maintenance_dataset.csv
+Number of records: 300
+Product-type distribution: {"M":93,"L":186,"H":21}
+
+Test Case Results
+-----------------
+TC01 | Predictive-maintenance schema validation | PASS
+  All required predictive-maintenance IoT columns are present.
+TC02 | Sensor and binary-field range validation | PASS
+  All product-type labels, sensor readings and binary failure fields are within expected validation ranges.
+TC03 | Failure/anomaly detection against validation rules | PASS
+  133 anomalous or failure-indicator records were detected.
+TC04 | Failure detection coverage | PASS
+  120 of 120 failure-labelled records were flagged by the script.
+
+Descriptive Statistics
+----------------------
+Average Air Temperature: 300.29 K
+Average Process Temperature: 310.08 K
+Average Rotational Speed: 1522.18 rpm
+Average Torque: 43.51 Nm
+Average Tool Wear: 123.09 min
+Average Power Proxy: 6629.92 W
+Std. Dev. Tool Wear: 71.68
+Failure-labelled records: 120
+Failure rate: 40.00%
+
+Failure Mode Counts
+-------------------
+TWF: 19
+HDF: 39
+PWF: 28
+OSF: 38
+RNF: 0
+
+Detected Anomaly Sample
+-----------------------
+Record 4: Type=H, Air=296.9 K, Process=307.8 K, Speed=1549 rpm, Torque=35.8 Nm, Tool_Wear=206, Failure=1
+Record 8: Type=L, Air=302.5 K, Process=310.2 K, Speed=1307 rpm, Torque=54 Nm, Tool_Wear=86, Failure=1
+Record 9: Type=L, Air=303.7 K, Process=312.7 K, Speed=1359 rpm, Torque=56.8 Nm, Tool_Wear=194, Failure=1
+Record 12: Type=L, Air=299.1 K, Process=310.1 K, Speed=1435 rpm, Torque=48.8 Nm, Tool_Wear=229, Failure=1
+Record 14: Type=M, Air=297.4 K, Process=308.8 K, Speed=1325 rpm, Torque=62.4 Nm, Tool_Wear=204, Failure=1
+Record 21: Type=M, Air=300.4 K, Process=310.2 K, Speed=1671 rpm, Torque=30.5 Nm, Tool_Wear=234, Failure=1
+Record 22: Type=L, Air=297.4 K, Process=308.7 K, Speed=2874 rpm, Torque=4.2 Nm, Tool_Wear=118, Failure=1
+Record 25: Type=H, Air=302.8 K, Process=312.4 K, Speed=1411 rpm, Torque=53.8 Nm, Tool_Wear=246, Failure=1
+Record 26: Type=M, Air=302.1 K, Process=310 K, Speed=1355 rpm, Torque=45.1 Nm, Tool_Wear=6, Failure=1
+Record 31: Type=L, Air=299.1 K, Process=309.8 K, Speed=1398 rpm, Torque=55.4 Nm, Tool_Wear=217, Failure=1
+Record 33: Type=M, Air=297.3 K, Process=308.3 K, Speed=1459 rpm, Torque=59.6 Nm, Tool_Wear=207, Failure=1
+Record 34: Type=L, Air=301.7 K, Process=309.9 K, Speed=1317 rpm, Torque=49 Nm, Tool_Wear=187, Failure=1
+Record 36: Type=L, Air=295.6 K, Process=306.1 K, Speed=1372 rpm, Torque=55.6 Nm, Tool_Wear=215, Failure=1
+Record 37: Type=L, Air=300.5 K, Process=310.5 K, Speed=2633 rpm, Torque=12.2 Nm, Tool_Wear=17, Failure=1
+Record 38: Type=L, Air=302.4 K, Process=311.9 K, Speed=1290 rpm, Torque=70 Nm, Tool_Wear=139, Failure=1
+Record 39: Type=L, Air=300.1 K, Process=311.3 K, Speed=2579 rpm, Torque=12.5 Nm, Tool_Wear=64, Failure=1
+Record 40: Type=L, Air=299.6 K, Process=310.9 K, Speed=1229 rpm, Torque=65.2 Nm, Tool_Wear=209, Failure=1
+Record 41: Type=M, Air=302.3 K, Process=311.8 K, Speed=1363 rpm, Torque=54 Nm, Tool_Wear=119, Failure=1
+Record 42: Type=M, Air=301.8 K, Process=310.1 K, Speed=2372 rpm, Torque=13.9 Nm, Tool_Wear=205, Failure=1
+Record 44: Type=M, Air=299 K, Process=310.3 K, Speed=1303 rpm, Torque=68.6 Nm, Tool_Wear=111, Failure=1
+... 113 additional anomaly records not shown in this preview.
+
+Interpretation
+--------------
+The script confirms that the revised predictive-maintenance IoT dataset has the required structure and valid value ranges.
+The automated validation flags all failure-labelled records and summarises failure modes, supporting reproducible testing and validation of an IoT monitoring workflow.
