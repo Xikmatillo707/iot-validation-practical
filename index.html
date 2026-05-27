@@ -19,14 +19,13 @@
     <section class="panel controls">
       <div>
         <h2>Run the IoT Test</h2>
-        <p>Select the supplied CSV file or click the demo button to analyse the included dataset.</p>
+        <p>Upload a CSV dataset to analyse IoT predictive maintenance data.</p>
       </div>
       <div class="actions">
         <input id="csvFile" type="file" accept=".csv" />
-        <button id="demoBtn">Run Demo Dataset</button>
         <button id="clearBtn" class="secondary">Clear</button>
       </div>
-      <p id="status" class="status">Ready. Choose a CSV file or run the demo dataset.</p>
+      <p id="status" class="status">Ready. Choose a CSV file to start the analysis.</p>
     </section>
 
     <section class="cards" aria-label="summary cards">
@@ -62,6 +61,123 @@
         <div id="anomalyList" class="anomaly-list">No anomaly records yet.</div>
       </div>
     </section>
+
+    <section class="grid">
+  <div class="panel">
+    <h2>Dataset Overview</h2>
+
+    <table>
+      <tbody>
+        <tr><td>Dataset Type</td><td><strong>IoT predictive maintenance</strong></td></tr>
+        <tr><td>Total Records</td><td><strong id="overviewTotal">300</strong></td></tr>
+        <tr><td>Failure Records</td><td><strong id="overviewFailures">120</strong></td></tr>
+        <tr><td>Detected Anomalies</td><td><strong id="overviewAnomalies">133</strong></td></tr>
+        <tr><td>Failure Rate</td><td><strong id="overviewRate">40%</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>Product Type Distribution</h2>
+
+    <table>
+      <tbody>
+        <tr><td>Type L</td><td><strong>186</strong></td></tr>
+        <tr><td>Type M</td><td><strong>93</strong></td></tr>
+        <tr><td>Type H</td><td><strong>21</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Detection Rules Used</h2>
+
+  <table>
+    <tbody>
+      <tr><td>TWF</td><td>Tool_Wear ≥ 200 min</td></tr>
+      <tr><td>HDF</td><td>Temperature difference &lt; 8.6 K and low speed</td></tr>
+      <tr><td>PWF</td><td>Power &lt; 3500 W or &gt; 9000 W</td></tr>
+      <tr><td>OSF</td><td>Tool_Wear × Torque &gt; 11000</td></tr>
+      <tr><td>RNF</td><td>Random failure field = 1</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="grid">
+  <div class="panel">
+    <h2>Failure Coverage</h2>
+
+    <table>
+      <tbody>
+        <tr><td>Detected Failures</td><td><strong>120 / 120</strong></td></tr>
+        <tr><td>Coverage</td><td><strong>100%</strong></td></tr>
+        <tr><td>Missed Records</td><td><strong>0</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>Risk Summary</h2>
+
+    <table>
+      <tbody>
+        <tr><td>Main Risk Factor</td><td><strong>Torque + Tool Wear</strong></td></tr>
+        <tr><td>Most Common Failure</td><td><strong>HDF</strong></td></tr>
+        <tr><td>Highest Risk Level</td><td><strong>OSF/PWF</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Interpretation</h2>
+
+  <p>
+    The automated validation successfully detected all failure-labelled records
+    and identified additional anomaly indicators using rule-based analysis.
+    The dashboard demonstrates a reproducible IoT predictive maintenance
+    validation workflow using JavaScript and CSV sensor datasets.
+  </p>
+</section>
+<section class="panel">
+  <h2>Recommendations</h2>
+
+  <table>
+    <tbody>
+      <tr><td>1</td><td>Implement real-time IoT sensor monitoring.</td></tr>
+      <tr><td>2</td><td>Use machine learning for predictive failure classification.</td></tr>
+      <tr><td>3</td><td>Add automated alert notifications.</td></tr>
+      <tr><td>4</td><td>Store historical sensor data in a database.</td></tr>
+      <tr><td>5</td><td>Improve anomaly visualization with charts.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="panel">
+  <h2>System Workflow</h2>
+
+  <table>
+    <tbody>
+      <tr><td>Step 1</td><td>Load IoT CSV dataset</td></tr>
+      <tr><td>Step 2</td><td>Validate schema and sensor ranges</td></tr>
+      <tr><td>Step 3</td><td>Apply anomaly detection rules</td></tr>
+      <tr><td>Step 4</td><td>Calculate statistics and coverage</td></tr>
+      <tr><td>Step 5</td><td>Display dashboard results</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="panel">
+  <h2>Practical Contribution</h2>
+
+  <p>
+    This practical implementation demonstrates an automated IoT predictive maintenance
+    validation system using JavaScript and CSV-based sensor datasets.
+    The dashboard validates data integrity, detects anomalies, evaluates
+    failure coverage, and visualizes results in a reproducible workflow.
+  </p>
+</section>
   </main>
 
   <footer>

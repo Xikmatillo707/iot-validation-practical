@@ -94,9 +94,15 @@ function render(results) {
     <div><div class="bar-label"><span>${key}</span><span>${value}</span></div><div class="track"><div class="fill" style="width:${(value / maxMode) * 100}%"></div></div></div>
   `).join('');
 
-  $('anomalyList').innerHTML = results.anomalies.slice(0, 15).map(row => `
+  $('anomalyList').innerHTML = results.anomalies.map(row => `
     <div class="anomaly"><strong>Record ${row.Record_ID}</strong>: Type=${row.Type}, Air=${row.Air_Temperature} K, Process=${row.Process_Temperature} K, Speed=${row.Rotational_Speed} rpm, Torque=${row.Torque} Nm, Tool_Wear=${row.Tool_Wear}, Failure=${row.Failure}</div>
-  `).join('') + (results.anomalies.length > 15 ? `<div class="anomaly">${results.anomalies.length - 15} additional anomaly records not shown in this preview.</div>` : '');
+  `).join('');
+
+$('overviewTotal').textContent = results.rows.length;
+$('overviewFailures').textContent = results.failures.length;
+$('overviewAnomalies').textContent = results.anomalies.length;
+$('overviewRate').textContent =
+  `${((results.failures.length / results.rows.length) * 100).toFixed(2)}%`;
 }
 
 async function runText(text, label) {
@@ -104,17 +110,6 @@ async function runText(text, label) {
   render(analyse(headers, rows));
   $('status').textContent = `Analysis complete: ${label}`;
 }
-
-$('demoBtn').addEventListener('click', async () => {
-  try {
-    $('status').textContent = 'Loading included demo dataset...';
-    const response = await fetch('iot_predictive_maintenance_dataset.csv');
-    if (!response.ok) throw new Error('Dataset could not be loaded. Start the local server using node server.js.');
-    await runText(await response.text(), 'included demo dataset');
-  } catch (error) {
-    $('status').textContent = error.message;
-  }
-});
 
 $('csvFile').addEventListener('change', async event => {
   const file = event.target.files[0];

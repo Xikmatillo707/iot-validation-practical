@@ -38,7 +38,23 @@ th { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spa
 .bar-label { display: flex; justify-content: space-between; margin-bottom: 4px; font-weight: 700; }
 .track { width: 100%; height: 12px; background: #e8eef6; border-radius: 99px; overflow: hidden; }
 .fill { height: 12px; background: var(--brand); border-radius: 99px; }
-.anomaly-list { max-height: 310px; overflow: auto; display: grid; gap: 8px; }
 .anomaly { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #f8fbff; font-size: 14px; }
 footer { text-align: center; color: var(--muted); padding: 25px; }
 @media (max-width: 850px) { .cards, .grid { grid-template-columns: 1fr; } .controls { align-items: flex-start; } }
+.panel p { color: var(--muted); line-height: 1.6; margin: 0; }
+td { line-height: 1.5; }
+.anomaly-list { max-height: 420px; overflow-y: auto; display: grid; gap: 8px; padding-right: 4px; }
+.anomaly-list::-webkit-scrollbar { width: 8px; }
+.anomaly-list::-webkit-scrollbar-track { background: #e8eef6; border-radius: 99px; }
+.anomaly-list::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 99px; }
+.anomaly-list::-webkit-scrollbar-thumb:hover { background: var(--brand-dark); }
+.panel h2 { margin: 0 0 14px; }
+.card strong { color: var(--brand-dark); }
+table tr:last-child td { border-bottom: none; }
+@media (max-width: 850px) {
+  .card strong { font-size: 26px; }
+
+  .panel { padding: 18px; }
+
+  .subtitle { font-size: 16px; }
+}
